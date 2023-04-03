@@ -60,7 +60,9 @@ public class Formation
     public double TauxDePresence()
     {
         // A compléter ici
-        return 0;
+        int taux=GetNombreDePresents()/lesParticipants.size()*100;
+
+        return taux;
     }
 
     // Cette méthode permet de calculer le bénéfice de la formation.
@@ -68,7 +70,8 @@ public class Formation
     // les frais kilométriques versés
     public double BeneficeFormation()
     {
+        double benef=GetNombreDePresents()*prixFormation-CalculerFraisRemboursementKilometriques();
         // A compléter ici
-        return  0;
+        return  benef;
     }
 }

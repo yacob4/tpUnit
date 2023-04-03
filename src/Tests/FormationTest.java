@@ -29,11 +29,15 @@ class FormationTest
     void getNombreDePresents()
     {
         // Cas n°1 : On ajoute les 2 premiers participants à la formation
-
-
+        formation.AjouterParticipant(participant1);
+        formation.AjouterParticipant(participant2);
+        assertEquals( 1, formation.GetNombreDePresents()) ;
 
         // Cas n°2 : on ajoute le reste des participants
-
+        formation.AjouterParticipant(participant3);
+        formation.AjouterParticipant(participant4);
+        formation.AjouterParticipant(participant5);
+        assertEquals( 3, formation.GetNombreDePresents()) ;
 
     }
 
@@ -41,12 +45,16 @@ class FormationTest
     void calculerFraisRemboursementKilometriques()
     {
         // Cas n°1 : On ajoute les 3 premiers participants à la formation
-
+        formation.AjouterParticipant(participant1);
+        formation.AjouterParticipant(participant2);
+        formation.AjouterParticipant(participant3);
+        assertEquals( 379.89, formation.CalculerFraisRemboursementKilometriques()) ;
 
 
         // Cas n°2 : on ajoute le reste des participants
-
-
+        formation.AjouterParticipant(participant4);
+        formation.AjouterParticipant(participant5);
+        assertEquals( 444.15, formation.CalculerFraisRemboursementKilometriques()) ;
 
     }
 
@@ -54,11 +62,16 @@ class FormationTest
     void tauxDePresence()
     {
         // Cas n°1 : On ajoute les 2 premiers participants à la formation
-
+        formation.AjouterParticipant(participant1);
+        formation.AjouterParticipant(participant2);
+        assertEquals( 50, formation.TauxDePresence()) ;
 
 
         // Cas n°2 : on ajoute le reste des participants
-
+        formation.AjouterParticipant(participant3);
+        formation.AjouterParticipant(participant4);
+        formation.AjouterParticipant(participant5);
+        assertEquals( 60, formation.TauxDePresence()) ;
 
     }
 
@@ -66,9 +79,17 @@ class FormationTest
     void beneficeFormation()
     {
         // Cas n°1 : On ajoute les 2 premiers participants à la formation
+        formation.AjouterParticipant(participant1);
+        formation.AjouterParticipant(participant2);
+        assertEquals( 379.89, formation.TauxDePresence()) ;
+
 
 
         // Cas n°2 : on ajoute le reste des participants
+        formation.AjouterParticipant(participant3);
+        formation.AjouterParticipant(participant4);
+        formation.AjouterParticipant(participant5);
+        assertEquals( 379.89, formation.TauxDePresence()) ;
 
 
     }
